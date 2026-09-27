@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServiceFlow — Service Management Portal</title>
+<meta name="description" content="Modern service management portal concept for portfolio presentation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Stylesheet.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="brand-mark">SF</span><span>ServiceFlow</span></div>
+    <div class="workspace"><span class="workspace-dot"></span><div><strong>Operations</strong><small>Enterprise workspace</small></div><span class="chevron">⌄</span></div>
+
+    <nav>
+      <div class="nav-label">WORKSPACE</div>
+      <button class="nav-item active" data-view="overview"><span>⌂</span>Overview</button>
+      <button class="nav-item" data-view="tickets"><span>◫</span>Tickets <b>12</b></button>
+      <button class="nav-item" data-view="customers"><span>◎</span>Customers</button>
+      <button class="nav-item" data-view="reports"><span>◒</span>Reports</button>
+      <div class="nav-label">MANAGEMENT</div>
+      <button class="nav-item" data-view="team"><span>♧</span>Team</button>
+      <button class="nav-item" data-view="settings"><span>⚙</span>Settings</button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="help-card"><div class="help-icon">?</div><strong>Need help?</strong><p>Check the knowledge base or contact your admin.</p><button>Open help center →</button></div>
+      <div class="profile"><div class="avatar">LP</div><div><strong>Leandro P.</strong><small>Administrator</small></div><span>•••</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobile-menu">☰</button>
+      <div class="breadcrumbs"><span>Workspace</span><b>/</b><strong id="page-title">Overview</strong></div>
+      <div class="top-actions">
+        <label class="global-search"><span>⌕</span><input id="global-search" placeholder="Search anything..." type="search"><kbd>⌘ K</kbd></label>
+        <button class="icon-btn" title="Notifications">♢<i></i></button>
+        <button class="icon-btn" id="theme-toggle" title="Toggle theme">☼</button>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="view active" id="overview">
+        <div class="page-head">
+          <div><div class="eyebrow">MONDAY, SEPTEMBER 28, 2026</div><h1>Good morning, Leandro.</h1><p>Here’s what’s happening across your service desk today.</p></div>
+          <button class="primary" id="new-ticket">＋ New ticket</button>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric"><div class="metric-top"><span>Open tickets</span><span class="metric-icon blue">◫</span></div><strong>128</strong><div class="trend up">↗ 8.4% <span>vs last week</span></div></article>
+          <article class="metric"><div class="metric-top"><span>Pending</span><span class="metric-icon amber">◷</span></div><strong>34</strong><div class="trend down">↘ 3.2% <span>vs last week</span></div></article>
+          <article class="metric"><div class="metric-top"><span>Resolved</span><span class="metric-icon green">✓</span></div><strong>842</strong><div class="trend up">↗ 12.6% <span>vs last week</span></div></article>
+          <article class="metric"><div class="metric-top"><span>Avg. response</span><span class="metric-icon purple">◴</span></div><strong>18m</strong><div class="trend up">↗ 6.1% <span>faster</span></div></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel chart-panel">
+            <div class="panel-head"><div><h2>Ticket volume</h2><p>Requests received over the last 7 days</p></div><select id="chart-range"><option>Last 7 days</option><option>Last 30 days</option></select></div>
+            <div class="chart-wrap">
+              <div class="y-axis"><span>80</span><span>60</span><span>40</span><span>20</span><span>0</span></div>
+              <div class="chart"><div class="grid-lines"><i></i><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 700 240" preserveAspectRatio="none"><defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6ee7d8" stop-opacity=".25"/><stop offset="1" stop-color="#6ee7d8" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0,185 C70,165 85,125 150,145 S230,180 280,115 S350,80 400,105 S465,70 520,95 S610,120 700,45 V240 H0Z"/><path class="line" d="M0,185 C70,165 85,125 150,145 S230,180 280,115 S350,80 400,105 S465,70 520,95 S610,120 700,45"/></svg><div class="x-axis"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div>
+            </div>
+          </article>
+
+          <article class="panel priority-panel">
+            <div class="panel-head"><div><h2>By priority</h2><p>Current open tickets</p></div></div>
+            <div class="donut-wrap"><div class="donut"><div><strong>128</strong><span>tickets</span></div></div><div class="legend"><div><i class="critical"></i><span>Critical</span><b>8</b></div><div><i class="high"></i><span>High</span><b>27</b></div><div><i class="medium"></i><span>Medium</span><b>56</b></div><div><i class="low"></i><span>Low</span><b>37</b></div></div></div>
+          </article>
+        </div>
+
+        <div class="bottom-grid">
+          <article class="panel tickets-panel">
+            <div class="panel-head"><div><h2>Recent tickets</h2><p>Latest activity from your team</p></div><button class="ghost" data-open-view="tickets">View all →</button></div>
+            <div class="table-wrap"><table><thead><tr><th>Ticket</th><th>Customer</th><th>Priority</th><th>Status</th><th>Assignee</th><th>Updated</th></tr></thead><tbody id="recent-tickets"></tbody></table></div>
+          </article>
+          <article class="panel activity-panel"><div class="panel-head"><div><h2>Team activity</h2><p>Latest updates</p></div></div><div class="activity-list" id="activity-list"></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="tickets">
+        <div class="page-head"><div><div class="eyebrow">WORKSPACE / TICKETS</div><h1>Tickets</h1><p>Track, assign and resolve service requests.</p></div><button class="primary" id="new-ticket-2">＋ New ticket</button></div>
+        <div class="panel ticket-manager">
+          <div class="toolbar"><div class="tabs"><button class="active" data-status="all">All <b>128</b></button><button data-status="open">Open <b>92</b></button><button data-status="pending">Pending <b>34</b></button><button data-status="resolved">Resolved <b>842</b></button></div><label class="table-search">⌕ <input id="ticket-search" placeholder="Search tickets..."></label></div>
+          <div class="table-wrap"><table><thead><tr><th>ID / Subject</th><th>Customer</th><th>Priority</th><th>Status</th><th>Assignee</th><th>Updated</th></tr></thead><tbody id="all-tickets"></tbody></table></div>
+        </div>
+      </section>
+
+      <section class="view placeholder-view" id="customers"><div class="page-head"><div><div class="eyebrow">WORKSPACE / CUSTOMERS</div><h1>Customers</h1><p>Manage accounts and service relationships.</p></div><button class="primary">＋ Add customer</button></div><div class="empty-panel"><span>◎</span><h2>Customer workspace</h2><p>Account profiles, service history and SLA information will live here.</p></div></section>
+      <section class="view placeholder-view" id="reports"><div class="page-head"><div><div class="eyebrow">WORKSPACE / REPORTS</div><h1>Reports</h1><p>Understand service performance with actionable insights.</p></div><button class="primary">Export report</button></div><div class="report-cards"><div class="report-card"><span>First response SLA</span><strong>94.8%</strong><small>+2.4% this month</small></div><div class="report-card"><span>Resolution SLA</span><strong>91.2%</strong><small>+1.8% this month</small></div><div class="report-card"><span>CSAT</span><strong>4.8/5</strong><small>Based on 326 responses</small></div></div></section>
+      <section class="view placeholder-view" id="team"><div class="page-head"><div><div class="eyebrow">MANAGEMENT / TEAM</div><h1>Team</h1><p>Monitor workload and assignments across the service desk.</p></div><button class="primary">＋ Invite member</button></div><div class="team-grid"><div class="member-card"><div class="avatar big">MC</div><strong>Maria Costa</strong><span>Support Lead</span><b>18 open tickets</b></div><div class="member-card"><div class="avatar big violet">AR</div><strong>Alex Romero</strong><span>Support Specialist</span><b>14 open tickets</b></div><div class="member-card"><div class="avatar big orange">JS</div><strong>Julia Santos</strong><span>Support Specialist</span><b>11 open tickets</b></div></div></section>
+      <section class="view placeholder-view" id="settings"><div class="page-head"><div><div class="eyebrow">MANAGEMENT / SETTINGS</div><h1>Settings</h1><p>Configure your workspace and service policies.</p></div></div><div class="settings-panel"><div><strong>Workspace profile</strong><span>Operations · Enterprise</span></div><div><strong>Business hours</strong><span>Mon–Fri · 09:00–18:00</span></div><div><strong>Default SLA</strong><span>First response within 2 hours</span></div></div></section>
+    </div>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modal">
+  <div class="modal"><button class="modal-close" id="modal-close">×</button><div class="eyebrow">NEW REQUEST</div><h2>Create a ticket</h2><p class="modal-sub">Add a service request to the Operations queue.</p><form id="ticket-form"><label>Subject<input required id="subject" placeholder="Briefly describe the issue"></label><label>Customer<select><option>Northstar Logistics</option><option>Acme Industries</option><option>Vertex Health</option><option>Atlas Finance</option></select></label><div class="form-row"><label>Priority<select><option>Medium</option><option>High</option><option>Critical</option><option>Low</option></select></label><label>Assignee<select><option>Maria Costa</option><option>Alex Romero</option><option>Julia Santos</option></select></label></div><label>Description<textarea placeholder="Add more details..."></textarea><button class="primary full">Create ticket</button></form></div>
+</div>
+<div class="toast" id="toast">Ticket created successfully ✓</div>
+<script src="JavaScript.js"></script>
+</body>
+</html>
